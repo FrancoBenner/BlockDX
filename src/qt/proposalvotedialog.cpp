@@ -123,8 +123,10 @@ void ProposalVoteDialog::on_btnVoteYesForAll_clicked()
     voteParams.push_back("yes");
 
     json_spirit::Value retVal = mnbudget(voteParams, false);
-
-    ui->statusLabel->setText("Current Status: " + QString::fromStdString(json_spirit::write_string(retVal)));
+    QString result = QString::fromStdString(json_spirit::write_string(retVal));
+    result.remove(0, 1);
+    result.remove(result.length()-1, 1);
+    ui->statusLabel->setText("Current Status: " + result);
 }
 
 
@@ -137,7 +139,10 @@ void ProposalVoteDialog::on_btnVoteNoForAll_clicked()
     voteParams.push_back("no");
 
     json_spirit::Value retVal = mnbudget(voteParams, false);
-    ui->statusLabel->setText("Current Status: " + QString::fromStdString(json_spirit::write_string(retVal)));
+    QString result = QString::fromStdString(json_spirit::write_string(retVal));
+    result.remove(0, 1);
+    result.remove(result.length()-1, 1);
+    ui->statusLabel->setText("Current Status: " + result);
 }
 
 
@@ -150,7 +155,10 @@ void ProposalVoteDialog::on_btnVoteAbstainForAll_clicked()
     voteParams.push_back("");
 
     json_spirit::Value retVal = mnbudget(voteParams, false);
-    ui->statusLabel->setText("Current Status: " + QString::fromStdString(json_spirit::write_string(retVal)));
+    QString result = QString::fromStdString(json_spirit::write_string(retVal));
+    result.remove(0, 1);
+    result.remove(result.length()-1, 1);
+    ui->statusLabel->setText("Current Status: " + result);
 }
 
 
