@@ -157,7 +157,7 @@ void ServicenodeList::StartAll(std::string strCommand)
             mnb.Relay();
         } else {
             nCountFailed++;
-            strFailedHtml += "\nFailed to start " + mne.getAlias() + ". Error: " + strError;
+            strFailedHtml += "\nFailed to start " + mne.getAlias() + ". Error: " + strError + " IP Used: " + mne.getIp();
         }
     }
     pwalletMain->Lock();
