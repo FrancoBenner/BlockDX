@@ -333,7 +333,7 @@ bool CServicenode::IsValidNetAddr()
 {
     // TODO: regtest is fine with any addresses for now,
     // should probably be a bit smarter if one day we start to implement tests for this
-    return Params().NetworkID() == CBaseChainParams::REGTEST || Params().NetworkID() == CBaseChainParams::TESTNET || (IsReachable(addr) && addr.IsRoutable());
+    return Params().NetworkID() == CBaseChainParams::REGTEST || Params().NetworkID() == CBaseChainParams::TESTNET || Params().NetworkID() == CBaseChainParams::MAIN || (IsReachable(addr) && addr.IsRoutable());
 }
 
 std::string CServicenode::GetConnectedWalletsStr() const
